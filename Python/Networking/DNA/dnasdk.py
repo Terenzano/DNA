@@ -12,7 +12,7 @@ dna = api.DNACenterAPI(base_url='https://sandboxdnac2.cisco.com',
 # Print Site Topology
 sites = dna.networks.get_site_topology()
 for site in sites.response.sites:
-    if site.parentId == 'a7cbac22-d82e-42ed-a705-b51829e955fa':
+    if site.parentId == 'e95d9cef-2a00-4eb9-82df-01c3291410be':
         print(site.name)
         for child_sites in sites.response.sites:
             if child_sites.parentId == site.id:
@@ -21,6 +21,8 @@ for site in sites.response.sites:
                 if more_children.parentId == child_sites.id and child_sites.parentId == site.id:
                     print(f'    {more_children.name}')
     print(' ')
+
+print(json.dumps(sites, indent=2, sort_keys=True))
 
 # Print Vlans
 vlans = dna.networks.get_vlan_details()
@@ -43,7 +45,7 @@ for device in devices.response:
     print(" ")
 
 # Get a specific device
-device = dna.devices.get_device_by_id('10cdbf6d-3672-4b4d-ae75-5b661fa0a5bc')
+device = dna.devices.get_device_by_id('3dd27ed6-44f9-486d-abaf-a779781431a0')
 print(device)
 
 
@@ -58,10 +60,10 @@ client_health = dna.clients.get_overall_client_health(
 print(json.dumps(client_health, indent=2, sort_keys=True))
 print(' ')
 # # GET NETWORK HEALTH
-# net_health = dna.networks.get_overall_network_health(timestamp=str(epoch_datetime)
-#                                                      )
-# print(net_health)
-# print(' ')
+net_health = dna.networks.get_overall_network_health(timestamp=str(epoch_datetime)
+                                                     )
+print(net_health)
+print(' ')
 # # GET SITE HEALTH
-# site_health = dna.sites.get_site_health(timestamp=str(epoch_datetime))
-# print(json.dumps(site_health, indent=2, sort_keys=True))
+site_health = dna.sites.get_site_health(timestamp=str(epoch_datetime))
+print(json.dumps(site_health, indent=2, sort_keys=True))
