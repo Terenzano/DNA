@@ -1,7 +1,7 @@
 import requests
 import json
 
-token = 'MjgyYzQyYjEtNTNmOS00NTQ0LWEyNjMtZDA5OWU2NjIxYjFkZjdiOGJjMzMtNjQ4_PF84_75e84279-5cba-4094-949a-7133a3be6509'
+token = 'ZjE4ZWRhMjEtNzRmYy00NGY5LWEzZDEtNWFjYmFlM2IzYjE4OTNlMzBjY2UtMzA2_PF84_consumer'
 
 ### DELETE ROOM ###
 room_url = 'https://api.ciscospark.com/v1/rooms'
