@@ -7,8 +7,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 url = "https://fmcrestapisandbox.cisco.com"
 login_url = '/api/fmc_platform/v1/auth/generatetoken'
 headers = {'Content-Type': 'application/json'}
-user = 'knox'
-pw = 'BtNdJM9k'
+user = 'naikatepa'
+pw = 'W7zjcTxP'
 
 
 login_response = requests.post(
